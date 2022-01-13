@@ -1,0 +1,85 @@
+.inputContainer{
+    grid-column: span 12;
+   
+    width: 100%;
+    display: flex;
+    padding: 5px 0 10px;
+    align-items: flex-end;
+    border-bottom: 1px solid var(--grey-ish);
+}
+.inputContainer h3{
+    width: 100%;
+    text-transform: capitalize;
+    letter-spacing: 2px;
+    border: 1px hidden blue;
+}
+
+.formcontainer{
+    width: 100%;
+}
+
+form{
+    width: 100%;
+    display: flex;
+    border: 1px hidden green;
+    justify-content: flex-end;
+}
+
+.dateInputContainer{
+
+    width: 0;
+    border: 2p solid violet;
+    border-bottom: 2px solid var(--orange-ish);
+    transition: width 1s ease-in;
+
+}
+
+.active.dateInputContainer{
+    width: 100%
+}
+
+.dateInputContainer input{
+    border: none;
+    width: 100%;
+    height: 30px;
+    outline:none;
+}
+
+.formbtnContainer{
+    width: 50px;
+    border: 1px hidden blue;
+    border-left: 1px solid var(--orange-ish);
+}
+
+.formbtnContainer button{
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: transparent;
+    color:var(--grey-ish);
+    transition: color 1s ease-in, background-color 1s ease-in;
+}
+
+.formbtnContainer button.active {
+    color: var(--orange-ish);
+    background-color: var(--grey-ish);
+}
+
+
+@media(min-width:600px){
+    .inputContainer{
+        width: 450px;
+        margin: auto;
+       
+    }
+}
+
+
+
+@media(min-width:992px){
+    .inputContainer{
+        width: 450px;
+        
+    }
+}
