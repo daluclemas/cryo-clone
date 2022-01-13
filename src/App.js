@@ -73,7 +73,9 @@ function App() {
     
             
     
-            {loading ? (<h1 className='loader'></h1>) : (
+            {loading ? (<div className='loader'>
+              <div></div>
+            </div>) : (
               <motion.div className='imagecards' 
                 animate="visible"
                 initial="hidden"
