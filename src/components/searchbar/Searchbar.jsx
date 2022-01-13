@@ -1,5 +1,6 @@
 import React, {useState, useRef} from 'react'
 import './Searchbar.css'
+import {motion} from 'framer-motion'
 
 const Searchbar = ({searchTerm}) => {
 
@@ -9,10 +10,12 @@ const Searchbar = ({searchTerm}) => {
 
 	const dateRef = useRef();
 
+	// onChange event
 	const handleChange = (e) =>{
 		setSearchText(e.target.value);
 	}
 
+	// on submit
 	const handleSubmit = (e)=>{
 		e.preventDefault()
 
@@ -20,14 +23,39 @@ const Searchbar = ({searchTerm}) => {
 		
 	}
 
+	// onclick event
 	const handleClick = () =>{
 
-		setToggle(!toggle);
+		setToggle(true);
 
-		dateRef.current.focus();
+		dateRef.current.focus();	
 
-		
+	}
 
+	// framer variants
+	const parent = {
+		visible:{
+			x:0,
+			opacity:1,
+			transition:{
+				when:"beforeChildren",
+				staggerChildren:'0.3',
+				duration:1.5
+			}
+		},
+		hidden:{
+			x:-1000,
+			opacity:0
+		}
+	}
+
+	const child = {
+		visible:{
+			opacity: 1
+		},
+		hidden:{
+			opacity:0
+		}
 	}
 
 
@@ -35,13 +63,17 @@ const Searchbar = ({searchTerm}) => {
 
 
     return (
-        <div className='inputContainer'>
+        <motion.div className='inputContainer' 
+					animate="visible"
+					initial="hidden"
+					variants={parent}
+				>
 
-					<h3>discover...</h3>
+					<motion.h3 variants={child}>discover...</motion.h3>
 
-					<div className="formcontainer">
+					<motion.div className="formcontainer" >
 						
-						<form onSubmit={handleSubmit}>
+						<motion.form onSubmit={handleSubmit} variants={child}>
 
 							<div className={`dateInputContainer ${toggle ? "active": ''}`}>
 								<input type="text" className='dateInput' placeholder="yy-mm-dd..." ref={dateRef} onChange={handleChange} />
@@ -53,13 +85,13 @@ const Searchbar = ({searchTerm}) => {
 								</button>
 							</div>
 
-						</form>
+						</motion.form>
 
-					</div>
+					</motion.div>
 
           
             
-        </div>
+        </motion.div>
     )
 }
 

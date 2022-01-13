@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import Searchbar from './components/searchbar/Searchbar';
 import Imagecard from './components/imageCard/Imagecard';
+import {motion} from 'framer-motion'
 
 
 function App() {
@@ -27,12 +28,36 @@ function App() {
       setloading(false)
     }).catch(err=>setError(`an error has occurred : ${err.message}`))
     
-  },[])
+  },[]);
 
-  // https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=${date}&api_key=${process.env.REACT_APP_API_KEY}
+  	// framer variants
+	const parent = {
+		visible:{
+    
+			opacity:1,
+			transition:{
+				when:"beforeChildren",
+				staggerChildren:'0.3',
+				duration:0.5
+			}
+		},
+		hidden:{
+     
+			opacity:0
+		}
+	}
 
-  // https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_API_KEY}&date=${date}
-  // <Imagecard url={apiData.url} title={apiData.title} explanation={apiData.explanation} date={apiData.date} />
+	const child = {
+		visible:{
+			opacity: 1
+		},
+		hidden:{
+			opacity:0
+		}
+	}
+
+
+
 
 
   return (
@@ -48,20 +73,32 @@ function App() {
     
             
     
-            {loading ? (<h1>loading...</h1>) : (
-              <div className='imagecards'>
+            {loading ? (<h1 className='loader'></h1>) : (
+              <motion.div className='imagecards' 
+                animate="visible"
+                initial="hidden"
+                variants={parent}
+              >
 
               {apiData.length === 0 && (<h1>no data found...</h1>)}
 
               {apiData.map(item=>{
                return(
+
+                <motion.div className='cardbody' variants={child}>
+
+                  <Imagecard key={item.id} url={item.img_src} camera={item.camera.name} rover={item.rover.name} date={item.earth_date} full_name={item.camera.full_name} />
+
+
+                </motion.div>
+
     
-                <Imagecard key={item.id} url={item.img_src} camera={item.camera.name} rover={item.rover.name} date={item.earth_date} full_name={item.camera.full_name} />
+
     
                );
              })}
              
-              </div>
+              </motion.div>
             )
               
             } 

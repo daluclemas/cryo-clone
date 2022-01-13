@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import './Imagecard.css'
+import {motion} from 'framer-motion'
 
 const Imagecard = ({url,camera, rover,date,full_name}) => {
 
@@ -11,32 +12,60 @@ const Imagecard = ({url,camera, rover,date,full_name}) => {
 		setHeartToggle(!heartToggle)
 	}
 
+	const subparent ={
+		visible:{
+			opacity:1,
+			transition:{
+				when:"beforeChildren",
+				staggerChildren:0.3,
+				duration: 1.5
+			}
+		},
+
+		hidden:{
+			opacity:0
+		}
+	}
+
+	const child = {
+		visible:{
+			opacity: 1
+		},
+		hidden:{
+			opacity:0
+		}
+	}
+
   return (
-    <div className='imagecard'>
+    <motion.div className='imagecard'
+			animate="visible"
+			initial="hidden"
+			variants={subparent}  
+		>
 
-			<div className="photocontainer">
+			<motion.div className="photocontainer" variants={child}>
 				<img src={url} alt="nasaimage" />
-			</div>
+			</motion.div>
 
-			<div className="cardtexts">
-				<p>camera name : <span>{camera}</span></p>
+			<motion.div className="cardtexts">
+				<motion.p variants={child}>camera name : <span>{camera}</span></motion.p>
 
-				<p>full-name : <span>{full_name}</span></p>
+				<motion.p variants={child}>full-name : <span>{full_name}</span></motion.p>
 
-				<p>rover : <span>{rover}</span></p>
+				<motion.p variants={child}>rover : <span>{rover}</span></motion.p>
 
 				<div className="likeButton">
 					<div className="likebtn">
-						<button onClick={handleClick}>
+						<motion.button onClick={handleClick} variants={child}>
 							<i className={`${heartToggle ? 'fas' : 'far'} fa-heart`}></i>
-						</button>
+						</motion.button>
 					</div>
-					<p>date : <span>{date}</span></p>
+					<motion.p variants={child}>date : <span>{date}</span></motion.p>
 				</div>
-			</div>
+			</motion.div>
 
             
-    </div>
+    </motion.div>
   )
 }
 
