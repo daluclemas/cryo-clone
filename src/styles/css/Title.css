@@ -1,0 +1,43 @@
+.title {
+  border: 1px hidden blue;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0 0 20px;
+}
+
+.title h2::first-letter {
+  text-transform: uppercase;
+}
+
+.title h2 {
+  padding: 1rem 0 0.5rem;
+  width: 100%;
+  line-height: 1.5;
+}
+
+.title .blue {
+  width: 3rem;
+  height: 5px;
+  background-color: #410ba5;
+}
+
+.title .pink {
+  width: 2.5rem;
+  height: 5px;
+  background-color: #f32a8f;
+}
+
+.center {
+  text-align: center;
+}
+
+.center div {
+  margin: auto;
+  text-align: center;
+}

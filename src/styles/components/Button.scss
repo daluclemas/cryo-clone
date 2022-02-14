@@ -1,0 +1,132 @@
+@import '../utils';
+
+.button-container{
+    width: 100px;
+    height: 35px;
+    border: 0;
+    margin: auto;
+    border-radius: 5px;
+    transition: 0.4s ease-in;
+
+    &:hover .blue{
+        border: 2px solid $blueColor;
+        
+    }
+
+    &:hover .pink{
+        border: 2px solid $pinkColor;
+        
+    }
+
+    &:hover .secondblue{
+        border: 2px solid $blueColor;
+        
+    }
+
+
+
+}
+
+button {
+    width: 100%;
+    height: 100%;
+    outline: none;
+    cursor: pointer;
+    border: none;
+    transition: 0.4s ease-in;
+    border-radius: 5px;
+    text-transform: capitalize;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font: {
+        size: 15px;
+        weight: 700;
+    }
+
+    svg{
+        margin-left: 0.2rem;
+    }
+}
+
+.blue{
+    background-color: $blueColor;
+    color: white;
+    
+    
+    &:hover{
+        color: $blueColor;
+        background-color: transparent;
+    }
+
+}
+
+.secondblue.button-container{
+    width: 300px;
+    height: 45px;
+    margin: 0;
+
+    .secondblue{
+        color: white;
+        background-color: $blueColor;
+
+        &:hover{
+            background-color: transparent;
+            color: $blueColor;
+            
+        }
+    }
+}
+
+.pink.button-container{
+    width: 300px;
+    height: 45px;
+    margin: 0 0 0 10px;
+
+   
+    
+    .pink {
+        color:white;
+        background-color: $pinkColor;
+
+        &:hover{
+            color: $pinkColor;
+            background-color: transparent;
+        }
+    }
+}
+
+.fontsize.button-container{
+    width: 120px;
+    height: 40px;
+    margin : 0;
+
+    .fontsize{
+        font-size: 14px;
+    }
+}
+
+.inverse.button-container{
+    width: 150px;
+    height: 45px;
+    margin: 0 0 0 10px;
+    border: 1px solid $pinkColor;
+
+    &:hover{
+        border: 0;
+    }
+
+    .inverse{
+        background-color: transparent;
+        color: $pinkColor;
+        cursor: pointer;
+
+        &:hover{
+            color: white;
+            background-color: $pinkColor;
+        }
+        
+    }
+
+
+}

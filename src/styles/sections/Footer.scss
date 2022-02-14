@@ -1,0 +1,254 @@
+@import '../utils';
+
+.footer{
+	background-color: #333;
+	width: 100%;
+	padding-top: 20px;
+
+	footer{
+		border: 1px hidden green;
+		width: 90%;
+		margin: auto;
+		display: flex;
+		flex-direction: column;
+		padding: 10px 0;
+		color: white;
+
+		.top-footer{
+			border: 3px hidden red;
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+			
+			.newsletter-container{
+				width: 100%;
+				display: flex;
+				flex-direction: column;
+
+				.cryo-logo-container{
+					display: flex;
+					flex-direction: column;
+
+					p{
+						width: 100%;
+						line-height: 1.5;
+						margin: 20px 0 20px;
+
+						&::first-letter{
+							text-transform: uppercase;
+						}
+					}
+				}
+				
+				.input-container{
+					border: 1px hidden red;
+					display: flex;
+					width: 80%;
+					margin: 0 0 30px;
+					position: relative;
+
+					.inputs{
+						width: 100%;
+						height: 40px;
+						border: 1px hidden yellow;
+					
+
+						input{
+							width: 100%;
+							height: 100%;
+							border: 0;
+							outline: none;
+							padding: 5px;
+
+							&[placeholder]{
+								text-transform: capitalize;
+							}
+						}
+					}
+
+					.input-button{
+						width: 60px;
+						position: absolute;
+						right: 0;
+						top: 0;
+						height: 100%;
+						z-index: 2;
+						background: $pinkColor;
+
+						button{
+							border-radius: 0;
+							outline: none;
+							background: transparent;
+							
+							svg{
+								color: white;
+								font: {
+									size: 18px;
+									weight: 900;
+								}
+							}
+						}
+					}
+				}
+			}
+
+				.list-group{
+					display: flex;
+					flex-direction: column;
+					width: 100%;
+					border: 1px hidden white;
+					margin: 0 auto 20px;
+
+					&:first-child{
+						margin-top: 10px;
+					}
+
+					p{
+						line-height: 1.5;
+						width: 100%;
+						text-transform: capitalize;
+						margin-bottom: 10px;
+						font-weight: 700;
+					}
+
+					ul{
+						width: 100%;
+						display: flex;
+						flex-direction: column;
+						list-style-type: none;
+						margin: 0;
+						padding: 0;
+
+						li{
+							margin-bottom: 8px;
+							width: 100%;
+							display: flex;
+							align-items: center;
+							cursor: pointer;
+
+							svg{
+								background: #2c2c31;
+								width: 30px;
+								height: 30px;
+								padding:6px;
+							}
+
+							div{
+								margin-left: 10px;
+								display: flex;
+								flex-direction: column;
+
+								h5{
+									margin-bottom: 2px;
+									text-transform: capitalize;
+									font-weight: 400;
+								}
+							}
+
+							a{
+								text: {
+									decoration: none;
+									transform: capitalize;
+								}
+
+								color: $lightFontColor;
+								
+								span{
+									text-transform: lowercase;
+								}
+							}
+						}
+
+					}
+				}
+	
+		}
+
+		.copyright-container{
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			text-align: center;
+			border-top: 1px solid $lightFontColor;
+			margin-top: 30px;
+			padding-top: 10px;
+
+			p{
+				margin-bottom: 8px;
+
+				&::first-letter{
+					text-transform: uppercase;
+				}
+
+				span{
+					text-transform: capitalize;
+				}
+			}
+
+			ul{
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
+				display: flex;
+				width: 100%;
+				justify-content: center;
+
+				li{
+					margin: 10px;
+					cursor: pointer;
+					padding:3px;
+					background: #2c2c31;
+
+					svg{
+					
+						width: 20px;
+						display: flex;
+					}
+				}
+			}
+		}
+	}
+
+}
+
+@media(min-width: 768px){
+	.footer{
+		footer{
+			.top-footer{
+				display: grid;
+	
+				grid-column-gap: 15px;
+				grid-template-columns: repeat(2,1fr);
+			}
+		}
+	}
+}
+
+@media(min-width: 992px){
+	.footer{
+		footer{
+			width: 85%;
+			.top-footer{
+
+				grid-template-columns: repeat(4,1fr);
+			}
+
+			.copyright-container{
+				flex-direction: row;
+				justify-content: space-between;
+				text-align: left;
+				align-items: center;
+			
+				p{
+					font-size: 12px;
+				}
+
+				ul{
+					justify-content: flex-end;
+
+
+				}
+			}
+		}
+	}
+}

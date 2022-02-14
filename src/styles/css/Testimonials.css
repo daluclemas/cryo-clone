@@ -1,0 +1,75 @@
+.testimonials-container {
+  border: 1px hidden red;
+  width: 100%;
+  padding: 25px 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-shadow: 0.5px 0.5px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0.5px 0.5px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  position: relative;
+  margin-bottom: 30px;
+  background-color: white;
+  -webkit-transition: 0.4s linear;
+  transition: 0.4s linear;
+}
+
+.testimonials-container:hover {
+  -webkit-box-shadow: 5px 5px 9px #410ba5;
+          box-shadow: 5px 5px 9px #410ba5;
+}
+
+.testimonials-container .quote {
+  border: 1px hidden green;
+  position: absolute;
+  width: 50%;
+  top: 0;
+  padding: 0;
+}
+
+.testimonials-container .quote span {
+  font-size: 4.5rem;
+  color: #f32a8f;
+}
+
+.testimonials-container p {
+  margin-top: 60px;
+  line-height: 1.5;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.testimonials-container p::first-letter {
+  text-transform: uppercase;
+}
+
+.testimonials-container .author {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.testimonials-container .author h3 {
+  line-height: 1.5;
+  text-transform: capitalize;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.testimonials-container .author div {
+  font-size: 12px;
+  text-transform: capitalize;
+}

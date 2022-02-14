@@ -1,0 +1,31 @@
+@import '../utils.scss';
+
+.brand{
+	border: 1px solid $pinkColor;
+	border-radius: 3px;
+	padding: 0.3rem 10px;
+	cursor: pointer;
+
+  span{
+		color: $headingColor;
+		text-transform: uppercase;
+		letter-spacing: 0.2rem;
+
+		font: {
+			weight:  700;
+			size: 24px;
+		}
+
+	}
+}
+
+
+.white{
+	border: 1px solid white;
+	width: 105px;
+
+	span{
+		color: white;
+	}
+
+}

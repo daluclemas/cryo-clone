@@ -1,0 +1,122 @@
+.button-container {
+  width: 100px;
+  height: 35px;
+  border: 0;
+  margin: auto;
+  border-radius: 5px;
+  -webkit-transition: 0.4s ease-in;
+  transition: 0.4s ease-in;
+}
+
+.button-container:hover .blue {
+  border: 2px solid #410ba5;
+}
+
+.button-container:hover .pink {
+  border: 2px solid #f32a8f;
+}
+
+.button-container:hover .secondblue {
+  border: 2px solid #410ba5;
+}
+
+button {
+  width: 100%;
+  height: 100%;
+  outline: none;
+  cursor: pointer;
+  border: none;
+  -webkit-transition: 0.4s ease-in;
+  transition: 0.4s ease-in;
+  border-radius: 5px;
+  text-transform: capitalize;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+button svg {
+  margin-left: 0.2rem;
+}
+
+.blue {
+  background-color: #410ba5;
+  color: white;
+}
+
+.blue:hover {
+  color: #410ba5;
+  background-color: transparent;
+}
+
+.secondblue.button-container {
+  width: 300px;
+  height: 45px;
+  margin: 0;
+}
+
+.secondblue.button-container .secondblue {
+  color: white;
+  background-color: #410ba5;
+}
+
+.secondblue.button-container .secondblue:hover {
+  background-color: transparent;
+  color: #410ba5;
+}
+
+.pink.button-container {
+  width: 300px;
+  height: 45px;
+  margin: 0 0 0 10px;
+}
+
+.pink.button-container .pink {
+  color: white;
+  background-color: #f32a8f;
+}
+
+.pink.button-container .pink:hover {
+  color: #f32a8f;
+  background-color: transparent;
+}
+
+.fontsize.button-container {
+  width: 120px;
+  height: 40px;
+  margin: 0;
+}
+
+.fontsize.button-container .fontsize {
+  font-size: 14px;
+}
+
+.inverse.button-container {
+  width: 150px;
+  height: 45px;
+  margin: 0 0 0 10px;
+  border: 1px solid #f32a8f;
+}
+
+.inverse.button-container:hover {
+  border: 0;
+}
+
+.inverse.button-container .inverse {
+  background-color: transparent;
+  color: #f32a8f;
+  cursor: pointer;
+}
+
+.inverse.button-container .inverse:hover {
+  color: white;
+  background-color: #f32a8f;
+}

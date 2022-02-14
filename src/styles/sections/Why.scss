@@ -1,0 +1,202 @@
+@import '../utils';
+
+.why-container{
+    width: 100%;
+    min-height: 50vh;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+
+    .why-content{
+        width: 90%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+
+        .title-and-subtitle{
+            width: 100%;
+            margin: 20px auto;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+
+            p{
+                margin: 10px 0 10px;
+                line-height: 1.5;
+
+                &::first-letter{
+                    text-transform: uppercase;
+                }
+            }
+        }
+
+        .video-container{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+
+            .video{
+                width: 18rem;
+                height: 150px;
+                box-shadow: 0.6px 0.6px 12px rgba(0,0,0,0.4);
+                margin: 5px auto 30px;
+                border-radius: 20px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: url('../../assets/images/remote.png');
+                background-repeat: none;
+                background-size: cover;
+
+                svg{
+                    color: white;
+                    font-size: 4rem;
+                    cursor: pointer;
+                    transition: 0.4s linear;
+
+                    &:hover{
+                        transform: scale(1.1);
+                    }
+ 
+                }
+            }
+
+            .unordered-list{
+                border: 1px hidden brown;
+
+                ul{
+                    display: flex;
+                    flex-direction: column;
+                    list-style-type: none;
+                    justify-content: center;
+                    width: 100%;
+                    margin: 0;
+                    padding:0;
+
+                    li{
+                        margin: auto 10px 10px;
+                        line-height: 1.4;
+                        position: relative;
+                        padding-left: 20px;
+                       
+
+                        &::first-letter{
+                            text-transform: uppercase;
+                        }
+
+                        &::before{
+                            content: "";
+                            width: 20px;
+                            height: 20px;
+                            background: url('../../assets/images/codelynx.png');
+                            background-repeat: no-repeat;
+                            background-size: contain;
+                            position: absolute;
+                            left: -10px;
+                            top: 4px;
+                            border: 1px solid ;
+                            border-radius: 50%;
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+    
+}
+
+
+@media (min-width: 600px){
+    .why-container{
+        .why-content{
+
+            .title-and-subtitle{
+                p{
+                    width: 490px;
+                    margin: auto;
+                    
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 900px){
+    .why-container{
+        .why-content{
+            width: 85%;
+
+            .video-container{
+                flex-direction: row;
+                align-items: center;
+                margin-top: 30px;
+
+                .video{
+                    width: 450px;
+                    height: 250px;
+                    margin: 0;
+
+                    svg{
+                        font-size: 6rem;
+                    }
+                }
+
+                .unordered-list{
+                    width: 40%;
+                    margin:auto;
+
+                    ul{
+                        li{
+                            font-size: 12px;
+
+                            &::before{
+                                width: 16px;
+                                height: 16px;
+                                top:2px;
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+
+@media (min-width: 1200px){
+    .why-container{
+        .why-content{
+            .video-container{
+                .video{
+
+                    width: 550px;
+                }
+
+                .unordered-list{
+                    width: 45%;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1400px){
+    .why-container{
+        .why-content{
+            .video-container{
+                .video{
+                    width: 600px;
+                    height:300px
+                }
+
+                .unordered-list{
+                    width: 50%;
+                }
+            }
+        }
+    }
+}

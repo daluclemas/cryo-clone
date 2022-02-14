@@ -1,0 +1,54 @@
+@import '../utils';
+
+.card-container{
+    // border: 1px hidden blue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0.5rem 1rem 1rem  1rem;
+    width: 90%;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+    margin-bottom: 30px;
+    background-color: white;
+    // transition: 0.4s ease-in;
+
+    &:hover{
+        box-shadow: 6px 6px 6px $logobg inset, -6px -6px 6px $logobg inset;
+        border: 1px solid rgba(0,0,0,0.2)
+    }
+
+    .logo{
+        background-color: $logobg;
+        padding: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        margin-bottom: 15px;
+        margin-top: 10px;
+        border-radius: 10px;
+        
+
+
+        svg{
+            color: $pinkColor;
+        }
+
+    }
+
+    h3{
+        text-transform: capitalize;
+        width: 100%;
+    }
+   
+}
+
+@media(min-width: 900px){
+    .card-container{
+        &:nth-child(3) , &:nth-child(4){
+            margin-bottom: 0;
+        }
+    }
+}

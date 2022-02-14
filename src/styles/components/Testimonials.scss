@@ -1,0 +1,62 @@
+@import '../utils';
+
+.testimonials-container{
+    border: 1px hidden red;
+    width: 100%;
+    padding: 25px 15px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0.5px 0.5px 10px rgba(0,0,0,0.2);
+    border-radius: 8px;
+    position: relative;
+    margin-bottom: 30px;
+    background-color: white;
+    transition: 0.4s linear;
+
+    &:hover{
+        box-shadow: 5px 5px 9px $buttonBlueColor;
+    }
+
+    .quote{
+        border: 1px hidden green;
+        position: absolute;
+        width: 50%;
+        top: 0;
+        padding:0;
+
+        span{
+            font-size: 4.5rem;
+            color: $pinkColor;
+        }
+    }
+
+    p{
+        margin-top: 60px;
+        line-height: 1.5;
+        width: 100%;
+        margin-bottom: 40px;
+
+        &::first-letter{
+            text-transform: uppercase;
+        }
+    }
+
+    .author{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+
+        h3{
+            line-height: 1.5;
+            text-transform: capitalize;
+            font-size: 15px;
+            font-weight: 700;
+        }
+
+        div{
+            font-size: 12px;
+            text-transform: capitalize;
+        }
+    }
+}
